@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+        <!-- 本地数据库驱动程序jar包的全路径 -->
+        <classPathEntry
+                location="/home/zhang/.m2/repository/mysql/mysql-connector-java/5.1.44/mysql-connector-java-5.1.44.jar"/>
+
+        <context id="context" targetRuntime="MyBatis3">
+                <commentGenerator>
+                        <property name="suppressAllComments" value="false"/>
+                        <property name="suppressDate" value="true"/>
+                </commentGenerator>
+
+                <!-- 数据库的相关配置 -->
+                <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                                connectionURL="jdbc:mysql://172.31.238.146:3306/offershow" userId="root"
+                                password="root"/>
+
+                <javaTypeResolver>
+                        <property name="forceBigDecimals" value="false"/>
+                </javaTypeResolver>
+
+                <!-- 实体类生成的位置 -->
+                <javaModelGenerator targetPackage="szu.csbd.dto"
+                                    targetProject="/home/zhang/workspace/IDEA/mybatisgenerator/src/main/java/">
+                        <property name="enableSubPackages" value="false"/>
+                        <property name="trimStrings" value="true"/>
+                </javaModelGenerator>
+
+                <!-- *Mapper.xml 文件的位置 -->
+                <sqlMapGenerator targetPackage="mappers"
+                                 targetProject="/home/zhang/workspace/IDEA/mybatisgenerator/src/main/resources/">
+                        <property name="enableSubPackages" value="false"/>
+                </sqlMapGenerator>
+
+                <!-- Mapper 接口文件的位置 -->
+                <javaClientGenerator targetPackage="szu.csbd.mapper"
+                                     targetProject="/home/zhang/workspace/IDEA/mybatisgenerator/src/main/java/"
+                                     type="XMLMAPPER">
+                        <property name="enableSubPackages" value="false"/>
+                </javaClientGenerator>
+
+                <!-- 相关表的配置 -->
+                <table domainObjectName="OfferDelay" tableName="t_offer_delay" enableCountByExample="false"
+                       enableDeleteByExample="false" enableSelectByExample="false"
+                       enableUpdateByExample="false"/>
+                <table domainObjectName="OfferCompany" tableName="t_offer_company" enableCountByExample="false"
+                       enableDeleteByExample="false" enableSelectByExample="false"
+                       enableUpdateByExample="false"/>
+                <table domainObjectName="OfferComments" tableName="t_offer_comments" enableCountByExample="false"
+                       enableDeleteByExample="false" enableSelectByExample="false"
+                       enableUpdateByExample="false"/>
+                <table domainObjectName="OfferLiked" tableName="t_offer_like" enableCountByExample="false"
+                       enableDeleteByExample="false" enableSelectByExample="false"
+                       enableUpdateByExample="false"/>
+                <table domainObjectName="CommentsRemark" tableName="t_remark_comments" enableCountByExample="false"
+                       enableDeleteByExample="false" enableSelectByExample="false"
+                       enableUpdateByExample="false"/>
+                <table domainObjectName="CommentsLiked" tableName="t_comments_like" enableCountByExample="false"
+                       enableDeleteByExample="false" enableSelectByExample="false"
+                       enableUpdateByExample="false"/>
+                <table domainObjectName="OfferView" tableName="t_offer_view" enableCountByExample="false"
+                       enableDeleteByExample="false" enableSelectByExample="false"
+                       enableUpdateByExample="false"/>
+        </context>
+</generatorConfiguration>
